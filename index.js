@@ -38,8 +38,9 @@ require('dotenv').config();
     timeout: 0
   });
 
-  console.log('MSG_URL has been successfully find')
-
+  console.log('MSG_URL has been successfully find');
+  console.log('Waiting for message...');
+  
   setInterval(async () => {
     const input = await page.$('#composerInput');
 
@@ -61,7 +62,7 @@ require('dotenv').config();
   
     await page.evaluate(async (input,quote) => {
       const today  = new Date();
-      input.value = `\`${quote}\`, \n\nSent via automated cron job, please don't reply \nTime: ${today.toLocaleString()}`
+      input.value = `\`${quote}\` \n\nSent via automated cron job, please don't reply \nTime: ${today.toLocaleString()}`
       return input.value
     },input,quote);
 
