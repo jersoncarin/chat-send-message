@@ -10,6 +10,10 @@ app.get('/v1/send', async (req, res) => {
     res.end(JSON.stringify({ status: 200 }));
 })
 
+app.get('*', (req,res) => {
+  res.status(404).send('Not found');
+})
+
 app.listen(port, () => {
   console.log(`Random quotes app listening at http://localhost:${port}`)
 })
