@@ -9,4 +9,9 @@ FB_MSG_URL=https://mbasic.facebook.com/messages/read/?fbid=xxxxxxxxxxx
 TIME_DELAY=10000
 ```
 
+Then run
+```sh
+node index.js
+```
+
 # Created by Jerson Carin
