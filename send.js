@@ -60,9 +60,12 @@ const send = async () => {
     quote = 'hello world'
 
   await page.evaluate(async (input,quote) => {
-    const today  = new Date();
-    input.value = `\`${quote}\` \n\nSent via automated cron job, please don't reply \nTime: ${today.toLocaleString()}`
-    return input.value
+    if(input) {
+      const today  = new Date();
+      input.value = `\`${quote}\` \n\nSent via automated cron job, please don't reply \nTime: ${today.toLocaleString()}`
+      return input.value
+    }
+    return 'hello world'
   },input,quote);
 
   await page.click('input[name="send"]');
