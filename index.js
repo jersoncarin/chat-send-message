@@ -1,7 +1,7 @@
-const send = require('./send')
+const send = require('./send');
 
 // Send for the firs time
-(async () => await send())()
+(async () => await send())();
 
 // Send for second time and infinity
-setInterval(async() => await send(),process.env.TIME_DELAY || 300000)
+setInterval(async() => await send(),process.env.TIME_DELAY || 300000);
